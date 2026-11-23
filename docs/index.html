@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>人工智能问题树 · 从思想的形式化到开放世界智能</title>
+  <meta name="description" content="一份以问题为线索的人工智能知识地图：表征、计算、给定形式框架与开放世界。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="text/markdown" href="map.md">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('ai-research-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.dataset.theme = savedTheme;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (error) {
+      /* ignore */
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到正文</a>
+
+  <header class="site-header">
+    <div class="header-left">
+      <button class="icon-button menu-button" id="menuButton" type="button" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <a class="brand" href="./" aria-label="返回首页">
+        <span class="brand-title">人工智能问题树</span>
+        <span class="brand-subtitle">从思想的形式化到开放世界智能</span>
+      </a>
+    </div>
+    <div class="header-right">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="搜索节点…" aria-label="搜索问题树节点" autocomplete="off">
+        <span id="searchCount" class="search-count" aria-live="polite"></span>
+      </div>
+      <button class="icon-button" id="themeButton" type="button" aria-label="切换明暗主题">◐</button>
+      <a class="icon-button github-link" href="https://github.com/VincentWong3/ai-research" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="目录">
+      <div class="sidebar-inner">
+        <div class="sidebar-actions">
+          <button id="expandAll" type="button">展开全部</button>
+          <button id="collapseAll" type="button">折叠章节</button>
+        </div>
+        <nav id="toc" class="toc" aria-label="问题树目录"></nav>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main id="content" class="content">
+      <div id="doc" class="markdown-body">
+        <p class="loading">正在载入问题树…</p>
+        <noscript>
+          <p>启用 JavaScript 后可获得侧栏目录、搜索与折叠功能；也可以直接阅读 <a href="map.md">Markdown 版本</a>。</p>
+        </noscript>
+      </div>
+      <footer class="site-footer">
+        <span>v3.5 · 2026-11-23</span>
+        <a href="https://github.com/VincentWong3/ai-research" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/VincentWong3/ai-research/blob/main/LICENSE" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+      </footer>
+    </main>
+  </div>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <script src="assets/marked.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
